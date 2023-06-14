@@ -15,6 +15,7 @@ struct Constants {
     static let url1 = "https://randomuser.me/api/?results=\(count)"
     static let count = 10
 
+    //currently not used
     static let useMockData = false
     static let mockEmptyState = false
     static let simulateFailure = true

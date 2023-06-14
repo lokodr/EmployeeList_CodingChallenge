@@ -9,14 +9,15 @@ import Foundation
 import SwiftUI
 
 class EmployeeDetailViewModel: ObservableObject {
+    
     @Published var person: Person
 
     var personName: String {
         person.name
     }
 
-    var personImage: UIImage? {
-        person.image
+    var imageUrl: String {
+        person.imageUrl
     }
     
     init(person: Person) {

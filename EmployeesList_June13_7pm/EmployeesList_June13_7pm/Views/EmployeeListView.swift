@@ -30,16 +30,11 @@ import SwiftUI
                             
                             HStack(alignment: .center) {
                                 
-
-//                                if let personImage = person.image {
-                                    // Display the image if available
                                 CustomImageView(urlString: person.imageUrl)
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 100, height: 100)
                                         .cornerRadius(75)
                                         .padding()
-  //                              }
-                                
                                 Text(person.name)
                             }
                         }

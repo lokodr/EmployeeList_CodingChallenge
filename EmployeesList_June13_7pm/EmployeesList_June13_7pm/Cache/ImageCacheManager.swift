@@ -30,6 +30,7 @@ class ImageCacheManager {
         }
     }
     
+    
     func saveImageToCache(image: UIImage, forKey key: String) {
         let fileURL = cacheDirectory.appendingPathComponent(key)
         
@@ -39,6 +40,7 @@ class ImageCacheManager {
         
         fileManager.createFile(atPath: fileURL.path, contents: imageData, attributes: nil)
     }
+    
     
     func getImageFromCache(forKey key: String) -> UIImage? {
         let fileURL = cacheDirectory.appendingPathComponent(key)

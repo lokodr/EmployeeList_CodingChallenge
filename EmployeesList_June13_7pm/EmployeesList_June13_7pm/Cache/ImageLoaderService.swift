@@ -21,7 +21,7 @@ class ImageLoaderService: ObservableObject {
             DispatchQueue.main.async {
                 Task {
 
-                    await Task.sleep(2_000_000_000)
+                    await Task.sleep(1_500_000_000)
                     self.image = UIImage(data: data) ?? UIImage()
                 }
 

@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-class APIManager1 {
+class APIManager {
     
-    static let shared = APIManager1()
+    static let shared = APIManager()
 
     func getRandomUsers(completion: @escaping (Result<[Person], APIError>) -> Void) {
         let urlString = Constants.url1
@@ -32,7 +32,7 @@ class APIManager1 {
             
             do {
                 if let response = try? JSONDecoder().decode(RandomUserResponse.self, from: data) {
-                    let users = try response.results.map { result in
+                    let users = response.results.map { result in
                         let name = "\(result.name.first) \(result.name.last)"
                         let url = "\(result.picture.large)"
                         return Person(name: name, imageUrl: url)
@@ -44,30 +44,4 @@ class APIManager1 {
             }
         }.resume()
     }
-}
-
-enum APIError: Error {
-    case invalidURL
-    case noData
-    case emptyResponse
-    case decodingError
-    case otherError(String)
-}
-
-struct RandomUserResponse: Codable {
-    let results: [RandomUserResult]
-}
-
-struct RandomUserResult: Codable {
-    let name: RandomUserName
-    let picture: RandomUserPicture
-}
-
-struct RandomUserName: Codable {
-    let first: String
-    let last: String
-}
-
-struct RandomUserPicture: Codable {
-    let large: URL
 }

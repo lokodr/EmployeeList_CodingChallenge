@@ -12,9 +12,7 @@ class Person: Identifiable, ObservableObject {
 
     let id = UUID()
     let name: String
-    let imageUrl: String
-    @Published var image: UIImage?
-    
+    let imageUrl: String    
     
     init(name: String, imageUrl: String) {
         self.name = name

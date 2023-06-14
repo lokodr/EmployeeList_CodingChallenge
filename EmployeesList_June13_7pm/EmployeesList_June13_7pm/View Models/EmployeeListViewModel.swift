@@ -29,7 +29,7 @@ class EmployeeListViewModel: ObservableObject {
     func fetchEmployees() {
         
         isLoading = true
-        APIManager1.shared.getRandomUsers() { result in
+        APIManager.shared.getRandomUsers() { result in
             switch result {
             case .success(let randomUsers):
                 // Handle successful response and use the fetched employees

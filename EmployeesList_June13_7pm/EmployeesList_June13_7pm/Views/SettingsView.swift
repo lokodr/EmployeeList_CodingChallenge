@@ -12,6 +12,7 @@ import SwiftUI
 import SwiftUI
 
 struct SettingsView: View {
+    
     @State private var knobValue: Double = 0.5
     @State private var switchOn: Bool = false
     @State private var sliderValue: Double = 0.5
